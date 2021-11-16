@@ -6,3 +6,10 @@
 <p><%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill %></p>
 <%= link_to "Edit", edit_dream_path, class: "btn btn-secondary" %>
 <%= link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
+<%# <ul class="list-group">
+  <% @dream.reviews.each do |review| %>
+    <%# <li class="list-group-item"><%= review.content %></li> %>
+  <%# end %>
+<%# </ul> %>
+
+<%#= link_to 'Leave a review', new_dream_review_path(@dream) %>
