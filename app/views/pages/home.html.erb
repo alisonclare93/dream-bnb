@@ -1,3 +1,17 @@
-<h1>DreamBnb</h1>
+ <div class="banner">
+  <div class="header">
+    <h1>Dream-BnB</h1>
+    <h2>Where your dreams come true</h2>
+  </div>
 
-<p>Find me in app/views/pages/home.html.erb</p>
+  <div class="home-searchbar">
+    <%= form_tag dreams_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for a dream"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
