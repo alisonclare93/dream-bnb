@@ -3,6 +3,7 @@
   <%= simple_form_for [ @dream ] do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :duration %>
     <%= f.input :price %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Submit", class: "btn btn-primary" %>
