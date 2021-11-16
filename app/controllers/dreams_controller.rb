@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_action :find_dream, only: :show
+  before_action :find_dream, only: %i[show destroy]
 
   def index
     @dreams = Dream.all
@@ -12,6 +12,11 @@ class DreamsController < ApplicationController
   end
 
   def create
+  end
+
+  def destroy
+    @dream.destroy
+    redirect_to root_path
   end
 
   private
