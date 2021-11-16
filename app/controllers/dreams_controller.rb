@@ -19,7 +19,8 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-    if @dream.save
+    @dream.user = current_user
+    if @dream.save!
       redirect_to dream_path(@dream)
     else
       render :new
@@ -34,7 +35,7 @@ class DreamsController < ApplicationController
   private
 
   def dream_params
-    params.require(:dream).permit(:name, :description, :price, :photo)
+    params.require(:dream).permit(:name, :description, :duration, :price, :photo)
   end
 
   def find_dream
