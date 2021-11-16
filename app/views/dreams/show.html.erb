@@ -3,4 +3,5 @@
 <p>Price: £<%= @dream.price  %></p>
 <p>Duration: <%= @dream.duration %> hours</p>
 <p>Created by <%= @dream.user.first_name + ' ' + @dream.user.last_name%></p>
+<p><%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill %></p>
 <%= link_to "Delete", "/dreams/#{params[:id]}", method: :delete %>
