@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  before_action :find_dream, only: %i[show destroy]
+  before_action :find_dream, only: %i[show destroy edit]
 
   def index
     if params[:query].present?
@@ -24,6 +24,18 @@ class DreamsController < ApplicationController
       redirect_to dream_path(@dream)
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @dream = Dream.find(params[:id])
+    if @dream.update(dream_params)
+      redirect_to dream_path(@dream)
+    else
+      render :edit
     end
   end
 
