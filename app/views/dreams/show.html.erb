@@ -1,0 +1,6 @@
+<h1><%= @dream.name %></h1>
+<p><%= @dream.description %></p>
+<p>Price: £<%= @dream.price  %></p>
+<p>Duration: <%= @dream.duration %> hours</p>
+<p>Created by <%= @dream.user.first_name + ' ' + @dream.user.last_name%></p>
+<%= link_to "Delete", "/dreams/#{params[:id]}", method: :delete %>
