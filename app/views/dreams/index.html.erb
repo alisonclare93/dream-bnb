@@ -13,17 +13,17 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
-      <% @dreams.each do |dream| %>
+      <% @dreams.order('random()').each do |dream| %>
         <div class="card">
           <p>
             <%= dream.name %>
           </p>
-          <img src="https://picsum.photos/400/300" alt="">
+          <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
           <p>
             <%= dream.description %>
           </p>
           <p>
-           £<%= dream.price %>
+          £<%= dream.price %>
           </p>
           <p>
             <%= dream.duration %> hours
