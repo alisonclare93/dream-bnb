@@ -1,3 +1,28 @@
 <% @my_bookings.each do |booking| %>
   <div class="card"> <%= booking.dream.name %> </div>
 <% end %>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <% @my_bookings.each do |booking| %>
+        <div class="card">
+          <p>
+            <%= booking.dream.name %>
+          </p>
+          <img src="https://picsum.photos/400/300" alt="">
+          <p>
+            <%= booking.dream.description %>
+          </p>
+          <p>
+           £<%= booking.dream.price %>
+          </p>
+          <p>
+            <%= booking.dream.duration %> hours
+          </p>
+          <%= link_to 'View Details', dream_path(booking.dream) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
