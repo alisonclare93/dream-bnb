@@ -6,8 +6,49 @@
     </button>
   </div>
 </nav>
+
 <div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <% @dreams.each do |dream| %>
+      <div class="card">
+        <p>
+          <%= dream.name %>
+        </p>
+        <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
+        <p>
+          <%= dream.description %>
+        </p>
+        <p>
+        £<%= dream.price %>
+        </p>
+        <p>
+          <%= dream.duration %> hours
+        </p>
+        <%= link_to 'View Details', dream_path(dream) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+     <% @bookings.each do |booking| %>
+      <div class="card">
+        <p>
+          <%= dream.name %>
+        </p>
+        <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
+        <p>
+          <%= dream.description %>
+        </p>
+        <p>
+        £<%= dream.price %>
+        </p>
+        <p>
+          <%= dream.duration %> hours
+        </p>
+        <%= link_to 'View Details', dream_path(dream) %>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+  </div>
 </div>
