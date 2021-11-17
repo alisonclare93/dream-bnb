@@ -15,7 +15,8 @@
   </div>
 </div>
 
-<div class="container dream_cards ">
+<div class="container">
+<h2>Most popular dreams</h2>
   <div class="row justify-content-center">
     <div class="col-6">
       <% @dreams.each do |dream| %>
@@ -28,7 +29,7 @@
             <%= dream.description %>
           </p>
           <p>
-           £ <%= dream.price %>
+           £<%= dream.price %>
           </p>
           <p>
             <%= dream.duration %> hours
