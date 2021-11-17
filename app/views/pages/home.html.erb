@@ -1,6 +1,6 @@
- <div class="banner">
+<div>
   <div class="header">
-    <h1>Dream-BnB</h1>
+    <h1>Dream-BnB:</h1>
     <h2>Where your dreams come true</h2>
   </div>
 
@@ -8,33 +8,35 @@
     <%= form_tag dreams_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
-        placeholder: "Search for a dream"
+        class: "form-control rounded",
+        placeholder: "Find a dream"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "btn btn-primary search-button" %>
     <% end %>
   </div>
 </div>
 
-
-<div>
-  <h2>Popular dreams</h2>
-  <% @top_dreams.each do |dream| %>
-    <div class="card">
-      <p>
-        <%= dream.name %>
-      </p>
-      <img src="https://picsum.photos/400/300" alt="">
-      <p>
-        <%= dream.description %>
-      </p>
-      <p>
-        £<%= dream.price %>
-      </p>
-      <p>
-        <%= dream.duration %> hours
-      </p>
-      <%= link_to 'View Details', dream_path(dream) %>
+<div class="container dream_cards ">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <% @dreams.each do |dream| %>
+        <div class="card">
+          <p>
+            <%= dream.name %>
+          </p>
+          <img src="https://picsum.photos/400/300" alt="">
+          <p>
+            <%= dream.description %>
+          </p>
+          <p>
+           £<%= dream.price %>
+          </p>
+          <p>
+            <%= dream.duration %> hours
+          </p>
+          <%= link_to 'View Details', dream_path(dream) %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
