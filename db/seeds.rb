@@ -33,7 +33,7 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{animal.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
 
@@ -48,7 +48,7 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{country.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
 
@@ -63,7 +63,7 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{band.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
 
@@ -78,7 +78,7 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{superpower.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
 
@@ -93,7 +93,7 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{planet.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
 
@@ -108,7 +108,7 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{philosopher.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
 
@@ -123,6 +123,6 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{team.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
   dream.save
 end
