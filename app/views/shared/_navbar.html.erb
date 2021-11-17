@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <h1>Dream-BnB</h1>
   <% end %>
 
@@ -11,10 +11,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to current_user.first_name, "#", class: "nav-link" %>
+          <%= link_to current_user.first_name, "/account", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://pyxis.nymag.com/v1/imgs/a93/592/a9fa13bd8541763a579ae0c6d7b8aedc88-14-ryan-reynolds.2x.rsquare.w330.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
