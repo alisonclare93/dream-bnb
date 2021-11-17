@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.dream = Dream.find(params[:dream_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to user_bookings_path(:user_id)
+      redirect_to account_path
     end
   end
 
