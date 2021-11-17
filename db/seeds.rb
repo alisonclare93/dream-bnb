@@ -36,7 +36,7 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{animal.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
 
 5.times do
@@ -51,7 +51,7 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{country.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
 
 5.times do
@@ -66,7 +66,7 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{band.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
 
 2.times do
@@ -81,7 +81,7 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{superpower.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
 
 5.times do
@@ -96,7 +96,7 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{planet.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
 
 1.times do
@@ -111,7 +111,7 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{philosopher.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
 
 5.times do
@@ -126,5 +126,5 @@ end
   )
   file = URI.open("https://loremflickr.com/600/400/#{team.gsub(/ /, "%20")}")
   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save
+  dream.save!
 end
