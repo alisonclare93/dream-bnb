@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-  get 'account', to: 'user#show'
   devise_for :users
   root to: 'pages#home'
   resources :dreams do
