@@ -23,9 +23,9 @@ end
 
 # Creates dreams of various kinds
 5.times do
-  animal = Faker::Creature::Animal.name.downcase
+  animal = Faker::Creature::Animal.name
   dream = Dream.new(
-    name: "A day as an #{animal}",
+    name: "#{animal} for a day",
     description: "Live your wildest animalistic fantasies.",
     price: 50 + (5 * rand(10)),
     duration: 24,

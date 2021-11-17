@@ -24,7 +24,7 @@
           <p>
             <%= dream.name %>
           </p>
-          <img src="https://picsum.photos/400/300" alt="">
+          <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
           <p>
             <%= dream.description %>
           </p>
