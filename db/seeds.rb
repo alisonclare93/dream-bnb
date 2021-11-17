@@ -39,20 +39,20 @@ end
   dream.save!
 end
 
-5.times do
-  country = Faker::Address.country
-  dream = Dream.new(
-    name: "A weekend in #{country}.",
-    description: "An all inclusive stay at a 5-star resort for you and a loved one.",
-    price: 500 + (50 * rand(10)),
-    duration: 48,
-    user_id: 1,
-    rating: 2 + rand(4)
-  )
-  file = URI.open("https://loremflickr.com/600/400/#{country.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
-end
+# 5.times do
+#   country = Faker::Address.country
+#   dream = Dream.new(
+#     name: "A weekend in #{country}.",
+#     description: "An all inclusive stay at a 5-star resort for you and a loved one.",
+#     price: 500 + (50 * rand(10)),
+#     duration: 48,
+#     user_id: 1,
+#     rating: 2 + rand(4)
+#   )
+#   file = URI.open("https://loremflickr.com/600/400/#{country.gsub(/ /, "%20")}")
+#   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
+#   dream.save!
+# end
 
 5.times do
   band = Faker::Music::RockBand.name
