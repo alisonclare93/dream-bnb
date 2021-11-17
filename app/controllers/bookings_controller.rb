@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @bookings.select { |n| n.user == current_user }
+    @my_bookings = @bookings.select { |n| n.user == current_user }
   end
 
   private
