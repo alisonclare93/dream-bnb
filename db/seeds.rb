@@ -9,6 +9,8 @@
 require 'faker'
 require "open-uri"
 
+User.destroy_all
+Dream.destroy_all
 
 # Creates 50 random users
 50.times do
