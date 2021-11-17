@@ -13,12 +13,12 @@ Dream.destroy_all
 User.destroy_all
 
 # Creates 50 random users
-50.times do
+40.times do
   User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    password: Faker::Artist.name
+    password: "123456"
   )
 end
 
