@@ -14,7 +14,7 @@ User.destroy_all
 
 # Creates 50 random users
 50.times do
-  User.create(
+  User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
@@ -31,7 +31,7 @@ end
     description: "Live your wildest animalistic fantasies.",
     price: 50 + (5 * rand(10)),
     duration: 24,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{animal.gsub(/ /, "%20")}")
@@ -46,7 +46,7 @@ end
     description: "An all inclusive stay at a 5-star resort for you and a loved one.",
     price: 500 + (50 * rand(10)),
     duration: 48,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{country.gsub(/ /, "%20")}")
@@ -61,7 +61,7 @@ end
     description: "Experience the best to ever do it, live and unrestrained. Don't forget your earplugs.",
     price: 20 + (50 * rand(10)),
     duration: 3,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{band.gsub(/ /, "%20")}")
@@ -76,7 +76,7 @@ end
     description: "Become the superhero you always fantasised about being. Experiences may vary.",
     price: 100 + (50 * rand(10)),
     duration: 8,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{superpower.gsub(/ /, "%20")}")
@@ -91,7 +91,7 @@ end
     description: "In space no one can hear you cry. Spacesuit not included.",
     price: 200 + (5 * rand(10)),
     duration: 8,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{planet.gsub(/ /, "%20")}")
@@ -106,7 +106,7 @@ end
     description: "As a wise man once said...#{Faker::GreekPhilosophers.quote}",
     price: 100 + (25 * rand(10)),
     duration: 8,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{philosopher.gsub(/ /, "%20")}")
@@ -121,7 +121,7 @@ end
     description: "Face it...it's not happening anytime soon",
     price: 60 + (5 * rand(10)),
     duration: 8,
-    user_id: 1 + rand(50),
+    user_id: 1 + rand(40),
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{team.gsub(/ /, "%20")}")
