@@ -17,6 +17,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = Booking.all
+    @bookings.select { |n| n.user == current_user }
+  end
+
   private
 
   def find_dream
