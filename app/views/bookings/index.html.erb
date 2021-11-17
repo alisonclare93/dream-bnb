@@ -10,7 +10,7 @@
           <p>
             <%= booking.dream.name %>
           </p>
-          <% cl_image_tag dream.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag dream.photo.key, height: 300, width: 400, crop: :fill %>
           <p>
             <%= booking.dream.description %>
           </p>

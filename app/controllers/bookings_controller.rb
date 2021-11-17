@@ -10,10 +10,7 @@ class BookingsController < ApplicationController
     @booking.dream = Dream.find(params[:dream_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to dreams_path
-      # want to redirect to account/bookings page
-    else
-      render :new
+      redirect_to user_bookings_path(:user_id)
     end
   end
 
