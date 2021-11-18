@@ -6,18 +6,15 @@
 <h2 class="text-center popular-dream-title">Most popular dreams</h2>
   <div class="row justify-content-center">
     <% @dreams.each do |dream| %>
-      <div class="card m-2" style="width: 22rem;">
-        <div class="card-img-top"><%= cl_image_tag dream.photo.key, width: "100%" %></div>
-        <div class="card-body">
-          <h4 class="card-title"><%= dream.name %></h4>
-          <div class="card-text">
-            <p>£ <%= dream.price %></p>
-            <p><%= dream.description %></p>
-            <p><%= dream.duration %> hours</p>
+        <div class="col-lg-6 mb-5">
+          <div class="hover hover-3 text-white rounded"><%= cl_image_tag dream.photo.key, width: "100%" %>
+            <div class="hover-overlay"></div>
+            <div class="hover-3-content px-5 py-4">
+              <h3 class="hover-3-title text-uppercase font-weight-bold mb-1"><span class="font-weight-light"><%= dream.name %></span></h3>
+              <p class="hover-3-description small text-uppercase mb-0"><%= link_to dream.description, dream_path(dream) %></p>
+            </div>
           </div>
         </div>
-        <%= link_to 'View Details', dream_path(dream), class: "btn btn-light" %>
-      </div>
     <% end %>
   </div>
 </div>
