@@ -10,33 +10,28 @@
         class: "form-control rounded",
         placeholder: "Find a dream"
       %>
-      <%= submit_tag "Search", class: "btn btn-primary search-button" %>
+      <div class="text-center"><%= submit_tag "Search", class: "btn btn-primary search-button" %></div>
     <% end %>
   </div>
 </div>
 
+
 <div class="container">
-<h2>Most popular dreams</h2>
+<h2 class="text-center">Most popular dreams</h2>
   <div class="row justify-content-center">
-    <div class="col-6">
-      <% @dreams.each do |dream| %>
-        <div class="card">
-          <p>
-            <%= dream.name %>
-          </p>
-          <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
-          <p>
-            <%= dream.description %>
-          </p>
-          <p>
-            £ <%= dream.price %>
-          </p>
-          <p>
-            <%= dream.duration %> hours
-          </p>
-          <%= link_to 'View Details', dream_path(dream) %>
+    <% @dreams.each do |dream| %>
+      <div class="card m-2" style="width: 22rem;">
+        <div class="card-img-top"><%= cl_image_tag dream.photo.key, width: "100%" %></div>
+        <div class="card-body">
+          <h4 class="card-title"><%= dream.name %></h4>
+          <div class="card-text">
+            <p>£ <%= dream.price %></p>
+            <p><%= dream.description %></p>
+            <p><%= dream.duration %> hours</p>
+          </div>
         </div>
-      <% end %>
-    </div>
+        <%= link_to 'View Details', dream_path(dream), class: "btn btn-light" %>
+      </div>
+    <% end %>
   </div>
 </div>
