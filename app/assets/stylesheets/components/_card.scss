@@ -91,3 +91,14 @@
 .hover-3:hover .hover-overlay {
   background: rgba(0, 0, 0, 0.8);
 }
+
+.homepage-card-link {
+  display: block;
+  padding: 4.5em;
+  margin: -4.5em;
+  * {
+    text-decoration: none;
+    color: white !important;
+    text-shadow: 1px 1px 28px #ffffff;
+  }
+}
