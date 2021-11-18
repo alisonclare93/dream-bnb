@@ -12,7 +12,7 @@
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <% @bookings.each do |booking| %>
-      <div class="card">
+      <div class="card my-bookings-card my-3">
         <div class="row no-gutters">
           <div class="col-sm-3"><%= cl_image_tag booking.dream.photo.key, class: 'card-img' %></div>
           <div class="col-sm-7">
@@ -22,10 +22,11 @@
             </h3>
             <p class="card-text">
               <%= booking.dream.description %>
-              £<%= booking.dream.price %>
-              <%= booking.dream.duration %> hours
+              <div class="card-info">
+                £<%= booking.dream.price %>
+                <%= booking.dream.duration %> hours
+              </div>
             </p>
-              <%= link_to 'View Details', dream_path(booking.dream), class: 'btn btn-light' %>
             </div>
           </div>
         </div>
