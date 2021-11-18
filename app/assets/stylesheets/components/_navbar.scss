@@ -20,3 +20,7 @@
 .navbar {
   padding: 15px 50px;
 }
+
+.navbar > .active > a {
+  color: aqua;
+}
