@@ -1,0 +1,28 @@
+<% @bookings.each do |booking| %>
+<a
+  href="<%= dream_path(booking.dream_id) %>"
+  class="my-bookings-div-link"
+  style="color: black"
+>
+  <div class="card my-bookings-card my-3">
+    <div class="row no-gutters">
+      <div class="col-sm-3">
+        <%= cl_image_tag booking.dream.photo.key, class: 'card-img' %>
+      </div>
+      <div class="col-sm-7">
+        <div class="card-body">
+          <h3 class="card-title"><%= booking.dream.name %></h3>
+          <p class="card-text">
+                <%= booking.dream.description %>
+              <div class="card-info">
+              <%= number_to_currency(booking.dream.price, unit: '£') %>
+                <%= booking.dream.duration %> hours
+              </div>
+              </p>
+        </div>
+      </div>
+      <div class="col-sm-2"><%# img here %></div>
+    </div>
+  </div>
+</a>
+<% end %>

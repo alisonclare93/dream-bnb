@@ -12,3 +12,26 @@
 @import "components/index";
 @import "components/card";
 @import "pages/index";
+
+.my-bookings-card {
+  border-radius: 10px;
+  img {
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.card-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+  .my-bookings-card .card-img {
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.my-bookings-div-link {
+  text-decoration: none !important;
+
+}
