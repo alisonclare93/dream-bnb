@@ -23,7 +23,7 @@
             <%= dream.description %>
           </p>
           <p>
-          £<%= dream.price %>
+          <%= number_to_currency(dream.price, unit: '£') %>
           </p>
           <p>
             <%= dream.duration %> hours
