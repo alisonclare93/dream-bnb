@@ -2,11 +2,11 @@
   <li class="nav-item" role="presentation">
     <a
       class="nav-link active"
-      id="profile-tab"
+      id="bookings-tab"
       data-toggle="tab"
-      href="#profile"
+      href="#bookings"
       role="tab"
-      aria-controls="profile"
+      aria-controls="bookings"
       aria-selected="true"
       >My Bookings</a
     >
@@ -14,11 +14,11 @@
   <li class="nav-item" role="presentation">
     <a
       class="nav-link"
-      id="home-tab"
+      id="dreams-tab"
       data-toggle="tab"
-      href="#home"
+      href="#dreams"
       role="tab"
-      aria-controls="home"
+      aria-controls="dreams"
       aria-selected="false"
       >My Dreams</a
     >
@@ -26,11 +26,11 @@
   <li class="nav-item" role="presentation">
     <a
       class="nav-link"
-      id="contact-tab"
+      id="messages-tab"
       data-toggle="tab"
-      href="#contact"
+      href="#messages"
       role="tab"
-      aria-controls="contact"
+      aria-controls="messages"
       aria-selected="false"
       >My Messages</a
     >
@@ -39,9 +39,9 @@
 <div class="tab-content" id="myTabContent">
   <div
     class="tab-pane fade show active"
-    id="profile"
+    id="bookings"
     role="tabpanel"
-    aria-labelledby="profile-tab"
+    aria-labelledby="bookings-tab"
   >
     <% @bookings.each do |booking| %>
     <a
@@ -77,9 +77,9 @@
 
   <div
     class="tab-pane fade"
-    id="home"
+    id="dreams"
     role="tabpanel"
-    aria-labelledby="home-tab"
+    aria-labelledby="dreams-tab"
   >
     <% @dreams.each do |dream| %>
     <a
@@ -115,8 +115,8 @@
 
   <div
     class="tab-pane fade"
-    id="contact"
+    id="messages"
     role="tabpanel"
-    aria-labelledby="contact-tab"
+    aria-labelledby="messages-tab"
   ></div>
 </div>

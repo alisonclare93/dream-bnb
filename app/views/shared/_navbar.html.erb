@@ -19,7 +19,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://pyxis.nymag.com/v1/imgs/a93/592/a9fa13bd8541763a579ae0c6d7b8aedc88-14-ryan-reynolds.2x.rsquare.w330.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Account", "account", class: "dropdown-item" %>
+            <%= link_to "My Account", account_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
