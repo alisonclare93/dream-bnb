@@ -13,20 +13,22 @@
   <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <% @bookings.each do |booking| %>
       <div class="card">
-        <p>
-          <%= booking.dream.name %>
-        </p>
-        <%= cl_image_tag booking.dream.photo.key, height: 400, width: 534, crop: :fill %>
-        <p>
-          <%= booking.dream.description %>
-        </p>
-        <p>
-          £<%= booking.dream.price %>
-        </p>
-        <p>
-          <%= booking.dream.duration %> hours
-        </p>
-        <%= link_to 'View Details', dream_path(booking.dream) %>
+        <div class="row no-gutters">
+          <div class="col-sm-3"><%= cl_image_tag booking.dream.photo.key, class: 'card-img' %></div>
+          <div class="col-sm-7">
+          <div class="card-body">
+            <h3 class="card-title">
+              <%= booking.dream.name %>
+            </h3>
+            <p class="card-text">
+              <%= booking.dream.description %>
+              £<%= booking.dream.price %>
+              <%= booking.dream.duration %> hours
+            </p>
+              <%= link_to 'View Details', dream_path(booking.dream), class: 'btn btn-light' %>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
