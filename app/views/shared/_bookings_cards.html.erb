@@ -15,7 +15,7 @@
           <p class="card-text">
                 <%= booking.dream.description %>
               <div class="card-info">
-                £<%= booking.dream.price %>
+              <%= number_to_currency(booking.dream.price, unit: '£') %>
                 <%= booking.dream.duration %> hours
               </div>
               </p>
