@@ -43,36 +43,7 @@
     role="tabpanel"
     aria-labelledby="profile-tab"
   >
-    <% @bookings.each do |booking| %>
-    <a
-      href="<%= dream_path(booking.dream_id) %>"
-      class="my-bookings-div-link"
-      style="color: black"
-    >
-      <div class="card my-bookings-card my-3">
-        <div class="row no-gutters">
-          <div class="col-sm-3">
-            <%= cl_image_tag booking.dream.photo.key, class: 'card-img' %>
-          </div>
-          <div class="col-sm-7">
-            <div class="card-body">
-              <h3 class="card-title"><%= booking.dream.name %></h3>
-              <p class="card-text">
-                <%= booking.dream.description %>
-              <div class="card-info">
-                £<%= booking.dream.price %>
-                <%= booking.dream.duration %> hours
-              </div>
-              </p>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <%# img here %>
-          </div>
-        </div>
-      </div>
-    </a>
-    <% end %>
+    <%= render :partial => 'shared/bookings_cards' %>
   </div>
 
   <div
@@ -81,36 +52,7 @@
     role="tabpanel"
     aria-labelledby="home-tab"
   >
-    <% @dreams.each do |dream| %>
-    <a
-      href="<%= dream_path(dream) %>"
-      class="my-bookings-div-link"
-      style="color: black"
-    >
-      <div class="card my-bookings-card my-3">
-        <div class="row no-gutters">
-          <div class="col-sm-3">
-            <%= cl_image_tag dream.photo.key, class: 'card-img' %>
-          </div>
-          <div class="col-sm-7">
-            <div class="card-body">
-              <h3 class="card-title"><%= dream.name %></h3>
-              <p class="card-text">
-                <%= dream.description %>
-              <div class="card-info">
-                £<%= dream.price %>
-                <%= dream.duration %> hours
-              </div>
-              </p>
-            </div>
-          </div>
-          <div class="col-sm-2">
-          <%# img here %>
-          </div>
-        </div>
-      </div>
-    </a>
-    <% end %>
+    <%= render :partial => 'shared/dreams_cards' %>
   </div>
 
   <div
