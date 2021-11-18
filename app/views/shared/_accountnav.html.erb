@@ -22,7 +22,7 @@
             </h3>
             <p class="card-text">
               <%= booking.dream.description %>
-              £<%= booking.dream.price %>
+              <%= number_to_currency(booking.dream.price, unit: '£') %>
               <%= booking.dream.duration %> hours
             </p>
               <%= link_to 'View Details', dream_path(booking.dream), class: 'btn btn-light' %>
@@ -44,7 +44,7 @@
           <%= dream.description %>
         </p>
         <p>
-          £<%= dream.price %>
+        <%= number_to_currency(dream.price, unit: '£') %>
         </p>
         <p>
           <%= dream.duration %> hours

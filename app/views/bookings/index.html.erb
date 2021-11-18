@@ -11,7 +11,7 @@
             <%= booking.dream.description %>
           </p>
           <p>
-           £<%= booking.dream.price %>
+          <%= number_to_currency(booking.dream.price, unit: '£') %>
           </p>
           <p>
             <%= booking.dream.duration %> hours
