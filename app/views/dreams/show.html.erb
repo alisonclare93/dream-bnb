@@ -2,7 +2,7 @@
   <h1><%= @dream.name %></h1>
   <p><%= @dream.description %></p>
   <p><%= cl_image_tag @dream.photo.key %></p>
-  <p>Price: £<%= @dream.price  %></p>
+  <p>Price: <%= number_to_currency(@dream.price, unit: '£')  %></p>
   <p>Duration: <%= @dream.duration %> hours</p>
   <p>Created by <%= @dream.user.first_name + ' ' + @dream.user.last_name%></p>
 
