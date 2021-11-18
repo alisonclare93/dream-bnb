@@ -1,20 +1,44 @@
-// .banner {
-//   background-size: cover;
-//   background-position: center;
-//   padding: 150px 0;
-// }
+.banner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 150px;
+  width: 100vw;
+}
 
-// .banner h1 {
-//   margin: 0;
-//   color: white;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-//   font-size: 32px;
-//   font-weight: bold;
-// }
+.banner h1 {
+  margin: 0;
+  color: rgba(134, 134, 134, 0.87);
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 14px;
+  font-family: 'Satisfy', cursive;
+}
 
-// .banner p {
-//   font-size: 20px;
-//   color: white;
-//   opacity: .7;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-// }
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+  color:rgba(134, 134, 134, 0.87);
+}
+
+.search-form-control .btn:hover {
+  color: black;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E7E7E7;
+}
+
+.search-form-control .form-control:focus {
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}

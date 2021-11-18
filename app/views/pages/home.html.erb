@@ -1,20 +1,6 @@
 <div>
-  <div class="header">
-    <h2>Where your dreams come true</h2>
-  </div>
-
-  <div class="home-searchbar">
-    <%= form_tag dreams_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control rounded",
-        placeholder: "Find a dream"
-      %>
-      <div class="text-center"><%= submit_tag "Search", class: "btn btn-primary search-button" %></div>
-    <% end %>
-  </div>
+  <%= render 'shared/banner' %>
 </div>
-
 
 <div class="container">
 <h2 class="text-center">Most popular dreams</h2>

@@ -1,5 +1,19 @@
-<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <a class="btn btn-flat" href="#">Sign Up</a>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url(https://pbs.twimg.com/media/DF-RzXDXUAEz4bO?format=jpg&name=large);">
+
+  <div class="bannertext">
+    <h1>Where your dreams come true</h1>
+
+  <div class="search-form-control form-group">
+    <%= form_tag dreams_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        placeholder: "Search for a dream"
+      %>
+      <%# <%= submit_tag `<i class="fas fa-search"></i> Search`, class: "btn btn-flat" %>
+      <%= button_tag(type: 'submit', class: "btn btn-flat") do
+        "<i class='fas fa-search'></i>".html_safe
+      end %>
+    <% end %>
   </div>
-</div> %>
+</div>
