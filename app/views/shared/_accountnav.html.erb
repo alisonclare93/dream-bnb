@@ -1,61 +1,122 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">My Bookings</a>
+    <a
+      class="nav-link active"
+      id="profile-tab"
+      data-toggle="tab"
+      href="#profile"
+      role="tab"
+      aria-controls="profile"
+      aria-selected="true"
+      >My Bookings</a
+    >
   </li>
   <li class="nav-item" role="presentation">
-    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">My Dreams</a>
+    <a
+      class="nav-link"
+      id="home-tab"
+      data-toggle="tab"
+      href="#home"
+      role="tab"
+      aria-controls="home"
+      aria-selected="false"
+      >My Dreams</a
+    >
   </li>
   <li class="nav-item" role="presentation">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My Messages</a>
+    <a
+      class="nav-link"
+      id="contact-tab"
+      data-toggle="tab"
+      href="#contact"
+      role="tab"
+      aria-controls="contact"
+      aria-selected="false"
+      >My Messages</a
+    >
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  <div
+    class="tab-pane fade show active"
+    id="profile"
+    role="tabpanel"
+    aria-labelledby="profile-tab"
+  >
     <% @bookings.each do |booking| %>
+    <a
+      href="<%= dream_path(booking.dream_id) %>"
+      class="my-bookings-div-link"
+      style="color: black"
+    >
       <div class="card my-bookings-card my-3">
         <div class="row no-gutters">
-          <div class="col-sm-3"><%= cl_image_tag booking.dream.photo.key, class: 'card-img' %></div>
+          <div class="col-sm-3">
+            <%= cl_image_tag booking.dream.photo.key, class: 'card-img' %>
+          </div>
           <div class="col-sm-7">
-          <div class="card-body">
-            <h3 class="card-title">
-              <%= booking.dream.name %>
-            </h3>
-            <p class="card-text">
-              <%= booking.dream.description %>
+            <div class="card-body">
+              <h3 class="card-title"><%= booking.dream.name %></h3>
+              <p class="card-text">
+                <%= booking.dream.description %>
               <div class="card-info">
                 £<%= booking.dream.price %>
                 <%= booking.dream.duration %> hours
               </div>
-            </p>
+              </p>
             </div>
+          </div>
+          <div class="col-sm-2">
+            <%# img here %>
           </div>
         </div>
       </div>
+    </a>
     <% end %>
   </div>
 
-  <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div
+    class="tab-pane fade"
+    id="home"
+    role="tabpanel"
+    aria-labelledby="home-tab"
+  >
     <% @dreams.each do |dream| %>
-      <div class="card">
-        <p>
-          <%= dream.name %>
-        </p>
-          <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
-        <p>
-          <%= dream.description %>
-        </p>
-        <p>
-          £<%= dream.price %>
-        </p>
-        <p>
-          <%= dream.duration %> hours
-        </p>
-        <%= link_to 'View Details', dream_path(dream) %>
+    <a
+      href="<%= dream_path(dream) %>"
+      class="my-bookings-div-link"
+      style="color: black"
+    >
+      <div class="card my-bookings-card my-3">
+        <div class="row no-gutters">
+          <div class="col-sm-3">
+            <%= cl_image_tag dream.photo.key, class: 'card-img' %>
+          </div>
+          <div class="col-sm-7">
+            <div class="card-body">
+              <h3 class="card-title"><%= dream.name %></h3>
+              <p class="card-text">
+                <%= dream.description %>
+              <div class="card-info">
+                £<%= dream.price %>
+                <%= dream.duration %> hours
+              </div>
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-2">
+          <%# img here %>
+          </div>
+        </div>
       </div>
+    </a>
     <% end %>
   </div>
 
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-
-  </div>
+  <div
+    class="tab-pane fade"
+    id="contact"
+    role="tabpanel"
+    aria-labelledby="contact-tab"
+  ></div>
 </div>
