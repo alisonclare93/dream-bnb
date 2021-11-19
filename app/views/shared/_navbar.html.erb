@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <h1>dream<span style="color: rgb(147, 171, 189)">bnb</span></h1>
+    <h1>dream<span style="color: #3f3d56;)">bnb</span></h1>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to current_user.first_name.capitalize, "account", class: "nav-link" %>
+          <%= link_to current_user.first_name.capitalize, account_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://pyxis.nymag.com/v1/imgs/a93/592/a9fa13bd8541763a579ae0c6d7b8aedc88-14-ryan-reynolds.2x.rsquare.w330.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
