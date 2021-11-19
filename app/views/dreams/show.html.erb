@@ -4,6 +4,7 @@
         <h1 id="booking-title"><%= @dream.name.capitalize %></h1>
         <p id="booking-description">'<%= @dream.description %>'</p>
         <div id="booking-info">
+
         <p><strong>Price:</strong> <%= number_to_currency(@dream.price, unit: '£')  %></p>
         <p><strong>Duration:</strong> <%= @dream.duration %> hours</p>
         <p><strong>Created by:</strong> <%= @dream.user.first_name.capitalize + ' ' +
@@ -22,14 +23,11 @@
       <% else %>
         <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
       <% end %>
-      </div>
-
-    
+      </div> 
   </div>
+
 
   <div id="booking-picture">
     <%= cl_image_tag @dream.photo.key %>
   </div>
-
-
 </div>
