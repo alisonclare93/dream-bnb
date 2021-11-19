@@ -55,3 +55,22 @@
 .my-bookings-card:hover .undraw {
   opacity: 1;
 }
+
+h2 {
+  padding: 28px 0 14px 0;
+}
+
+.btn, .log-in {
+  margin-bottom: 14px;
+  padding: 7px 14px;
+  color: #3f3d56;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.btn:hover, .log-in:hover {
+  color: black;
+  transition: ease-in-out 5;
+  text-decoration: none;
+  border: solid 2px #3f3d56;
+}
