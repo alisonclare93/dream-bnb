@@ -8,6 +8,7 @@
         <p><strong>Duration:</strong> <%= @dream.duration %> hours</p>
         <p><strong>Created by:</strong> <%= @dream.user.first_name.capitalize + ' ' +
         @dream.user.last_name.capitalize %></p>
+
       </div>
 
       <div id="booking-buttons">
@@ -20,11 +21,13 @@
         <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
       <% end %>
       </div>
-    </div>
 
-    <div id="booking-picture">
-      <%= cl_image_tag @dream.photo.key %>
-    </div>
+    
   </div>
-</div>
+
+  <div id="booking-picture">
+    <%= cl_image_tag @dream.photo.key %>
+  </div>
+
+
 </div>
