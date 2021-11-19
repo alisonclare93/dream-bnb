@@ -15,14 +15,10 @@
           <h3 class="card-title"><%= dream.name %></h3>
           <p class="card-text">
                 <%= dream.description %>
-              <div class="card-info">
-                <%= number_to_currency(dream.price, unit: '£') %>
-                <%= dream.duration %> hours
-              </div>
               </p>
         </div>
       </div>
-      <div class="col-sm-2 card-svg p-3"><%= image_tag "#{img_no}.svg", class: 'card-img undraw' %></div>
+      <div class="col-sm-2 card-svg p-3"><%= image_tag "#{img_no % 6}.svg", class: 'card-img undraw' %></div>
     </div>
   </div>
 </a>
