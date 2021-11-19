@@ -44,7 +44,7 @@
 
 .bannertext h1 {
   text-shadow: 1px 1px 18px #ffffff;
-  color: rgba(147, 171, 189, 0.938);
+  color: rgb(65,59,88);
 }
 
 .undraw {
@@ -55,6 +55,7 @@
 .my-bookings-card:hover .undraw {
   opacity: 1;
 }
+
 
 h2 {
   padding: 28px 0 14px 0;
@@ -73,4 +74,4 @@ h2 {
   transition: ease-in-out 5;
   text-decoration: none;
   border: solid 2px #3f3d56;
-}
+
