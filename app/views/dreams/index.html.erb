@@ -1,14 +1,15 @@
- <div class="search-bar">
-  <%= form_tag dreams_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search for a dream"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-<%# TODO do we want buttons for categories which affect the page - need new category column? %>
-</div>
+  <div class="search-form-control form-group">
+    <%= form_tag dreams_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control string required",
+        placeholder: "Search for a dream"
+      %>
+      <%= button_tag(type: 'submit', class: "btn btn-flat") do
+        "<i class='fas fa-search'></i>".html_safe
+      end %>
+    <% end %>
+  </div>
 
 <div class="container">
   <div class="row justify-content-center">
