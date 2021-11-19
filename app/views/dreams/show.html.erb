@@ -8,18 +8,16 @@
         <p><strong>Duration:</strong> <%= @dream.duration %> hours</p>
         <p><strong>Created by:</strong> <%= @dream.user.first_name.capitalize + ' ' +
         @dream.user.last_name.capitalize %></p>
-      </div>
-
-      <div id="booking-buttons">
-        <% link_to "Edit", edit_dream_path, class: "book-button" %>
-        <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
-        <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
-      </div>
     </div>
 
-    <div id="booking-picture">
-      <%= cl_image_tag @dream.photo.key %>
+    <div id="booking-buttons">
+      <% link_to "Edit", edit_dream_path, class: "book-button" %>
+      <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
+      <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
     </div>
   </div>
-</div>
+
+  <div id="booking-picture">
+    <%= cl_image_tag @dream.photo.key %>
+  </div>
 </div>
