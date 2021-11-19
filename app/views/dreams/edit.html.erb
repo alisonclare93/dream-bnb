@@ -1,10 +1,10 @@
 <div class="container col-6">
   <h1 id=new-dream-title> Edit your Dream </h1>
     <%= simple_form_for [ @dream ] do |f| %>
-      <%= f.input :name %>
+      <%= f.input :name, disabled: true %>
       <%= f.input :description %>
-      <%= f.input :duration %>
-      <%= f.input :price %>
+      <%= f.input :duration, disabled: true %>
+      <%= f.input :price, disabled: true %>
       <%= f.input :photo, as: :file %>
       <%= f.submit "Sleep Well", class: "book-button" %>
     <% end %>

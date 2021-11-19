@@ -41,7 +41,8 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    @dream.destroy
+    @dream = Dream.find(params[:id])
+    # @booking = Booking.where()
     redirect_to root_path
   end
 
