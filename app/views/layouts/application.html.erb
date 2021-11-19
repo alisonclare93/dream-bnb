@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dream-BnB</title>
+    <title>dreambnb</title>
+    <link rel="shortcut icon" type="image/svg" href="<%= image_url('moon.svg')%>"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +11,6 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
     <div class="page-container">
       <div class="navbar-container"><%= render 'shared/navbar' %></div>
