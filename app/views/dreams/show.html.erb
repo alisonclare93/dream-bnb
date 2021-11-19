@@ -4,26 +4,30 @@
         <h1 id="booking-title"><%= @dream.name.capitalize %></h1>
         <p id="booking-description">'<%= @dream.description %>'</p>
         <div id="booking-info">
-          <p><strong>Price:</strong> <%= number_to_currency(@dream.price, unit: '£')  %></p>
-          <p><strong>Duration:</strong> <%= @dream.duration %> hours</p>
-          <p><strong>Created by:</strong> <%= @dream.user.first_name.capitalize + ' ' +
-          @dream.user.last_name.capitalize %></p>
-        </div>
+
+        <p><strong>Price:</strong> <%= number_to_currency(@dream.price, unit: '£')  %></p>
+        <p><strong>Duration:</strong> <%= @dream.duration %> hours</p>
+        <p><strong>Created by:</strong> <%= @dream.user.first_name.capitalize + ' ' +
+        @dream.user.last_name.capitalize %></p>
+
+      </div>
 
       <div id="booking-buttons">
-        <% if current_user.nil? %>
-          <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
-        <% elsif current_user.bookings.select {|n| n.dream_id == @dream.id}.count > 0 %>
-          <%= link_to "Edit", edit_dream_path, class: "book-button edit-button" %>
-          <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
-        <% else %>
-          <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
-        <% end %>
-      </div>
-    </div>
+      <% if current_user.nil? %>
+        <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
+      <% elsif current_user.bookings.select {|n| n.dream_id == @dream.id}.count > 0 %>
 
-    <div id="booking-picture">
-      <%= cl_image_tag @dream.photo.key %>
-    </div>
+        <%= link_to "Edit", edit_dream_path, class: "book-button edit-button" %>
+
+        <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
+      <% else %>
+        <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
+      <% end %>
+      </div> 
+  </div>
+
+
+  <div id="booking-picture">
+    <%= cl_image_tag @dream.photo.key %>
   </div>
 </div>
