@@ -2,10 +2,10 @@
   <h1 id=new-dream-title> Edit your Dream </h1>
   <div id=new-dream-form>
     <%= simple_form_for [ @dream ] do |f| %>
-      <%= f.input :name %>
+      <%= f.input :name, disabled: true %>
       <%= f.input :description %>
-      <%= f.input :duration %>
-      <%= f.input :price %>
+      <%= f.input :duration, disabled: true %>
+      <%= f.input :price, disabled: true %>
       <%= f.input :photo, as: :file %>
   </div>
       <%= f.submit "Sleep Well", class: "book-button" %>
