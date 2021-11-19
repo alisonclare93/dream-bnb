@@ -22,15 +22,17 @@
     <% @dreams.order('random()').each do |dream| %>
       <div class="row justify-content-center">
         <% @dreams.each do |dream| %>
+          <a href="<%= dream_path(dream) %>" class="homepage-card-link">
             <div class="col-lg-6 mb-5">
               <div class="hover hover-3 text-white rounded"><%= cl_image_tag dream.photo.key, width: "100%" %>
                 <div class="hover-overlay"></div>
                 <div class="hover-3-content px-5 py-4">
                   <h3 class="hover-3-title text-uppercase font-weight-bold mb-1"><span class="font-weight-light"><%= dream.name %></span></h3>
-                  <p class="hover-3-description small text-uppercase mb-0"><%= link_to dream.description, dream_path(dream) %></p>
+                  <p class="hover-3-description small text-uppercase mb-0"><%= link_to dream.description, dream_path(dream), style: "color:white"  %></p>
                 </div>
               </div>
             </div>
+          </a>
         <% end %>
       </div>
     <% end %>
