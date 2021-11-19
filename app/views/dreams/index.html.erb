@@ -1,36 +1,39 @@
- <div class="search-bar">
-  <%= form_tag dreams_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search for a dream"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-<%# TODO do we want buttons for categories which affect the page - need new category column? %>
-</div>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <% @dreams.order('random()').each do |dream| %>
-        <div class="card">
-          <p>
-            <%= dream.name %>
-          </p>
-          <%= cl_image_tag dream.photo.key, height: 400, width: 534, crop: :fill %>
-          <p>
-            <%= dream.description %>
-          </p>
-          <p>
-          <%= number_to_currency(dream.price, unit: '£') %>
-          </p>
-          <p>
-            <%= dream.duration %> hours
-          </p>
-          <%= link_to 'View Details', dream_path(dream) %>
-        </div>
-      <% end %>
+  <div class="search-bar">
+    <div class="search-form-control form-group">
+      <div class="mt-3">
+        <%= form_tag dreams_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control string required",
+            placeholder: "Search for a dream"
+          %>
+          <%= button_tag(type: 'submit', class: "btn btn-flat") do
+            "<i class='fas fa-search'></i>".html_safe
+          end %>
+        <% end %>
+      </div>
     </div>
+  <%# TODO do we want buttons for categories which affect the page - need new category column? %>
+  </div>
+
+  <div>
+    <% @dreams.order('random()').each do |dream| %>
+      <div class="row justify-content-center">
+        <% @dreams.each do |dream| %>
+            <div class="col-lg-6 mb-5">
+              <div class="hover hover-3 text-white rounded"><%= cl_image_tag dream.photo.key, width: "100%" %>
+                <div class="hover-overlay"></div>
+                <div class="hover-3-content px-5 py-4">
+                  <h3 class="hover-3-title text-uppercase font-weight-bold mb-1"><span class="font-weight-light"><%= dream.name %></span></h3>
+                  <p class="hover-3-description small text-uppercase mb-0"><%= link_to dream.description, dream_path(dream) %></p>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
+

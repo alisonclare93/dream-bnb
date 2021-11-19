@@ -1,13 +1,25 @@
 <div class="container">
-  <h1><%= @dream.name %></h1>
-  <p><%= @dream.description %></p>
-  <p><%= cl_image_tag @dream.photo.key %></p>
-  <p>Price: <%= number_to_currency(@dream.price, unit: '£')  %></p>
-  <p>Duration: <%= @dream.duration %> hours</p>
-  <p>Created by <%= @dream.user.first_name + ' ' + @dream.user.last_name%></p>
+  <div id="booking-box">
+    <div id="booking-text">
+        <h1 id="booking-title"><%= @dream.name.capitalize %></h1>
+        <p id="booking-description">'<%= @dream.description %>'</p>
+        <div id="booking-info">
+        <p><strong>Price:</strong> <%= number_to_currency(@dream.price, unit: '£')  %></p>
+        <p><strong>Duration:</strong> <%= @dream.duration %> hours</p>
+        <p><strong>Created by:</strong> <%= @dream.user.first_name.capitalize + ' ' +
+        @dream.user.last_name.capitalize %></p>
+      </div>
 
-  <% link_to "Edit", edit_dream_path, class: "btn btn-secondary" %>
-  <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
+      <div id="booking-buttons">
+        <% link_to "Edit", edit_dream_path, class: "book-button" %>
+        <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
+        <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
+      </div>
+    </div>
 
-  <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
+    <div id="booking-picture">
+      <%= cl_image_tag @dream.photo.key %>
+    </div>
+  </div>
+</div>
 </div>
