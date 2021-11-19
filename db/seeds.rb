@@ -14,7 +14,7 @@ User.destroy_all
 
 # Creates 50 random users
 5.times do
-  User.create!(
+  User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
@@ -35,8 +35,8 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{animal.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.save
 end
 
 # 5.times do
@@ -50,8 +50,8 @@ end
 #     rating: 2 + rand(4)
 #   )
 #   file = URI.open("https://loremflickr.com/600/400/#{country.gsub(/ /, "%20")}")
-#   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-#   dream.save!
+#   dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+#   dream.save
 # end
 
 5.times do
@@ -65,8 +65,8 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{band.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.save
 end
 
 2.times do
@@ -80,8 +80,8 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{superpower.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.save
 end
 
 5.times do
@@ -95,8 +95,8 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{planet.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.save
 end
 
 1.times do
@@ -110,8 +110,8 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{philosopher.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.save
 end
 
 5.times do
@@ -125,6 +125,6 @@ end
     rating: 2 + rand(4)
   )
   file = URI.open("https://loremflickr.com/600/400/#{team.gsub(/ /, "%20")}")
-  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/jpeg')
-  dream.save!
+  dream.photo.attach(io: file, filename: 'preview.png', content_type: 'image/png')
+  dream.save
 end
