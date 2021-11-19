@@ -1,11 +1,13 @@
 <div class="container col-6">
-  <h1> Create a Dream! </h1>
-  <%= simple_form_for [ @dream ] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :duration %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+  <h1 id=new-dream-title> Create a Dream </h1>
+  <div id=new-dream-form>
+    <%= simple_form_for [ @dream ] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :duration %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+  </div>
+      <%= f.submit "Sleep Well", class: "book-button" %>
+    <% end %>
 </div>
