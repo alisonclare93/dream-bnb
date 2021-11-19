@@ -17,12 +17,14 @@
   border-radius: 10px;
   img {
     border-radius: 10px 0 0 10px;
+  };
+  &:hover {
+    background-color: rgb(250,250,250);
   }
 }
 
-.card-img {
-  height: 100%;
-  object-fit: cover;
+.card-svg {
+  object-fit: contain;
 }
 
 @media (max-width: 575.98px) {
@@ -38,4 +40,42 @@
 .navbar-lewagon h1 {
   font-size: 50px;
   margin: -1rem;
+}
+
+.bannertext h1 {
+  text-shadow: 1px 1px 18px #ffffff;
+  color: rgb(65,59,88);
+}
+
+.undraw {
+  opacity: 0.5;
+  object-fit: contain;
+}
+
+.my-bookings-card:hover .undraw {
+  opacity: 1;
+}
+
+
+h2 {
+  padding: 28px 0 14px 0;
+}
+
+.btn, .log-in {
+  margin-bottom: 14px;
+  padding: 7px 14px;
+  color: #3f3d56;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.btn:hover, .log-in:hover {
+  color: black;
+  transition: ease-in-out 5;
+  text-decoration: none;
+  border: solid 2px #3f3d56;
+}
+
+#myTab {
+  margin-top: 24px;
 }
