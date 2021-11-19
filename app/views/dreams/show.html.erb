@@ -15,7 +15,9 @@
       <% if current_user.nil? %>
         <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
       <% elsif current_user.bookings.select {|n| n.dream_id == @dream.id}.count > 0 %>
-        <%= link_to "Edit", edit_dream_path, class: "btn btn-primary" %>
+
+        <%= link_to "Edit", edit_dream_path, class: "book-button edit-button" %>
+
         <% link_to "Delete", "/dreams/#{params[:id]}", method: :delete, class: "btn btn-danger" %>
       <% else %>
         <%= render "bookings/form", locals: {dream: @dream, booking: @booking} %>
