@@ -18,3 +18,22 @@ require("channels")
 
 import "controllers"
 import "bootstrap"
+import swal from 'sweetalert'
+
+
+document.addEventListener("turbolinks:load", () => {
+  if (document.querySelector("#test")) {
+    const myButton = document.querySelector("#test")
+    myButton.addEventListener("click", event => {
+      event.target.classList.add('d-none')
+      swal({
+        title: "Congratulations!",
+        text: "You have booked your dream",
+        icon: "success",
+      }).then(function () {
+
+        document.querySelector('#new_booking').submit();
+      });
+    })
+  }
+});
