@@ -1,3 +1,4 @@
+<% img_no = 0 %>
 <% @bookings.each do |booking| %>
 <a
   href="<%= dream_path(booking.dream_id) %>"
@@ -13,16 +14,17 @@
         <div class="card-body">
           <h3 class="card-title"><%= booking.dream.name %></h3>
           <p class="card-text">
-                <%= booking.dream.description %>
-              <div class="card-info">
-              <%= number_to_currency(booking.dream.price, unit: '£') %>
-                <%= booking.dream.duration %> hours
-              </div>
-              </p>
+          <%= booking.dream.description %>
+          <div class="card-info">
+            <%= number_to_currency(booking.dream.price, unit: '£') %>
+            <%= booking.dream.duration %> hours
+          </div>
+          </p>
         </div>
       </div>
-      <div class="col-sm-2"><%# img here %></div>
+      <div class="col-sm-2 card-svg p-3"><%= image_tag "#{img_no}.svg", class: 'card-img undraw' %></div>
     </div>
   </div>
 </a>
+<% img_no += 1 %>
 <% end %>
